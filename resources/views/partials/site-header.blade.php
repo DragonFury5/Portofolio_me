@@ -23,7 +23,7 @@
                         <x-icon name="chevron-down" :size="14" class="user-menu__chev" />
                     </summary>
                     <div class="user-menu__panel">
-                        <p class="user-menu__handle">@{{ $navUser->username }}</p>
+                        <p class="user-menu__handle">&#64;{{ $navUser->username }}</p>
                         <a href="{{ route('dashboard') }}"><x-icon name="layout" :size="16" /> Studio</a>
                         <a href="{{ route('makers.show', $navUser->username) }}"><x-icon name="globe" :size="16" /> Public profile</a>
                         <a href="{{ route('settings.edit') }}"><x-icon name="settings" :size="16" /> Settings</a>

@@ -20,7 +20,7 @@
 
     /* ---------------------------------- Navigation --------------------------------- */
     const navToggle = $('[data-nav-toggle]');
-    const mobileNav = $('#mobile-nav');
+    const mobileNav = navToggle ? document.getElementById(navToggle.getAttribute('aria-controls')) : null;
 
     if (navToggle && mobileNav) {
         navToggle.addEventListener('click', () => {
@@ -246,7 +246,7 @@
                 image.alt = '';
                 image.loading = 'lazy';
                 thumb.replaceChildren(image);
-                setUploadNote(field, 'Uploaded. Save the page to keep it.');
+                setUploadNote(field, 'Uploaded. Autosave will keep it.');
                 hidden.dispatchEvent(new Event('change', { bubbles: true }));
             })
             .catch((error) => {
@@ -404,7 +404,7 @@
         let previewTimer = null;
         let controller = null;
 
-        const fontHref = $('link[href*="fonts.css"]')?.href || `${window.location.origin}/assets/css/fonts.css`;
+        const fontHref = $('[data-code-fonts]')?.href || `${window.location.origin}/assets/css/code-fonts.css`;
 
         const setStatus = (text, state) => {
             if (!status) return;

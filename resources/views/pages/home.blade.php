@@ -282,7 +282,7 @@
                         <iframe src="{{ $lead->publicUrl() }}?embed=1"
                                 title="Preview of {{ $lead->title }}"
                                 loading="lazy" tabindex="-1" aria-hidden="true"
-                                sandbox="allow-scripts allow-forms allow-popups allow-modals"></iframe>
+                                @if ($lead->isCode()) sandbox="allow-scripts allow-forms allow-popups allow-modals" @endif></iframe>
                         <span class="work-card__open">Open page <x-icon name="arrow-up-right" :size="13" /></span>
                     </div>
                     <div class="work-card__meta">
@@ -298,7 +298,7 @@
                                 <iframe src="{{ $portfolio->publicUrl() }}?embed=1"
                                         title="Preview of {{ $portfolio->title }}"
                                         loading="lazy" tabindex="-1" aria-hidden="true"
-                                        sandbox="allow-scripts allow-forms allow-popups allow-modals"></iframe>
+                                        @if ($portfolio->isCode()) sandbox="allow-scripts allow-forms allow-popups allow-modals" @endif></iframe>
                                 <span class="work-card__open">Open page <x-icon name="arrow-up-right" :size="13" /></span>
                             </div>
                             <div class="work-card__meta">

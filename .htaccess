@@ -1,0 +1,6 @@
+# Convenience for Apache/Laragon when the project root is the document root.
+# Production deployments should point the document root at /public instead.
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>

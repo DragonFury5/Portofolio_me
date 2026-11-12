@@ -6,6 +6,7 @@ use App\Models\Portfolio;
 use App\Models\User;
 use Illuminate\Http\Response;
 use Illuminate\View\View;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
 class PageController extends Controller
 {
@@ -56,5 +57,28 @@ class PageController extends Controller
             ."\nSitemap: ".route('sitemap')."\n";
 
         return response($content, 200, ['Content-Type' => 'text/plain; charset=UTF-8']);
+    }
+
+    /**
+     * Serve the self-hosted fonts with CORS so sandboxed, opaque-origin
+     * portfolio pages can use them without opening a same-origin hole.
+     */
+    public function font(string $file): BinaryFileResponse
+    {
+        $allowed = [
+            'fraunces-latin-italic-400-700.woff2',
+            'fraunces-latin-normal-400-700.woff2',
+            'public-sans-latin-italic-400-600.woff2',
+            'public-sans-latin-normal-400-700.woff2',
+        ];
+
+        abort_unless(in_array($file, $allowed, true), 404);
+
+        return response()->file(public_path('assets/fonts/'.$file), [
+            'Content-Type' => 'font/woff2',
+            'Access-Control-Allow-Origin' => '*',
+            'Cross-Origin-Resource-Policy' => 'cross-origin',
+            'Cache-Control' => 'public, max-age=31536000, immutable',
+        ]);
     }
 }

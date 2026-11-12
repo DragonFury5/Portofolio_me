@@ -15,7 +15,7 @@
                 <x-avatar :user="$maker" :size="64" />
                 <div>
                     <h1>{{ $maker->name }}</h1>
-                    <p class="maker-hero__handle">@{{ $maker->username }}</p>
+                    <p class="maker-hero__handle">&#64;{{ $maker->username }}</p>
                 </div>
             </div>
             @if ($maker->bio)
@@ -68,7 +68,7 @@
                         <iframe src="{{ $portfolio->publicUrl() }}?embed=1"
                                 title="Preview of {{ $portfolio->title }}"
                                 loading="lazy" tabindex="-1" aria-hidden="true"
-                                sandbox="allow-scripts allow-forms allow-popups allow-modals"></iframe>
+                                @if ($portfolio->isCode()) sandbox="allow-scripts allow-forms allow-popups allow-modals" @endif></iframe>
                     </div>
                     <div class="maker-site__meta">
                         <h2>{{ $portfolio->title }}</h2>

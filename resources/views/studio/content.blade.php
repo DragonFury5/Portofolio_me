@@ -127,12 +127,12 @@
                         <div class="repeat-item__body">
                             <div class="field-row">
                                 <div class="field">
-                                    <label>Label</label>
-                                    <input class="input" type="text" name="links[{{ $i }}][label]" maxlength="40" value="{{ $link['label'] ?? '' }}" data-repeat-title-input>
+                                    <label for="link-label-{{ $i }}">Label</label>
+                                    <input class="input" id="link-label-{{ $i }}" type="text" name="links[{{ $i }}][label]" maxlength="40" value="{{ $link['label'] ?? '' }}" data-repeat-title-input>
                                 </div>
                                 <div class="field">
-                                    <label>URL</label>
-                                    <input class="input" type="text" name="links[{{ $i }}][url]" maxlength="500" value="{{ $link['url'] ?? '' }}" placeholder="https://">
+                                    <label for="link-url-{{ $i }}">URL</label>
+                                    <input class="input" id="link-url-{{ $i }}" type="text" name="links[{{ $i }}][url]" maxlength="500" value="{{ $link['url'] ?? '' }}" placeholder="https://">
                                 </div>
                             </div>
                         </div>
@@ -167,21 +167,21 @@
                         <div class="repeat-item__body">
                             <div class="field-row">
                                 <div class="field">
-                                    <label>Project title</label>
-                                    <input class="input" type="text" name="projects[{{ $i }}][title]" maxlength="100" value="{{ $project['title'] ?? '' }}" data-repeat-title-input>
+                                    <label for="project-title-{{ $i }}">Project title</label>
+                                    <input class="input" id="project-title-{{ $i }}" type="text" name="projects[{{ $i }}][title]" maxlength="100" value="{{ $project['title'] ?? '' }}" data-repeat-title-input>
                                 </div>
                                 <div class="field">
-                                    <label>Year</label>
-                                    <input class="input" type="text" name="projects[{{ $i }}][year]" maxlength="20" value="{{ $project['year'] ?? '' }}">
+                                    <label for="project-year-{{ $i }}">Year</label>
+                                    <input class="input" id="project-year-{{ $i }}" type="text" name="projects[{{ $i }}][year]" maxlength="20" value="{{ $project['year'] ?? '' }}">
                                 </div>
                             </div>
                             <div class="field">
-                                <label>Role</label>
-                                <input class="input" type="text" name="projects[{{ $i }}][role]" maxlength="80" value="{{ $project['role'] ?? '' }}" placeholder="Identity, print">
+                                <label for="project-role-{{ $i }}">Role</label>
+                                <input class="input" id="project-role-{{ $i }}" type="text" name="projects[{{ $i }}][role]" maxlength="80" value="{{ $project['role'] ?? '' }}" placeholder="Identity, print">
                             </div>
                             <div class="field">
-                                <label>Short description</label>
-                                <textarea class="textarea" name="projects[{{ $i }}][summary]" maxlength="500">{{ $project['summary'] ?? '' }}</textarea>
+                                <label for="project-summary-{{ $i }}">Short description</label>
+                                <textarea class="textarea" id="project-summary-{{ $i }}" name="projects[{{ $i }}][summary]" maxlength="500">{{ $project['summary'] ?? '' }}</textarea>
                             </div>
                             <div class="project-image" data-image-field>
                                 <div class="project-image__thumb" data-image-thumb>
@@ -198,12 +198,11 @@
                                         <input type="file" accept="image/jpeg,image/png,image/webp" data-image-upload>
                                     </label>
                                     <button class="upload-btn" type="button" data-image-clear>Remove</button>
-                                    <span class="upload-note" data-upload-note>JPG, PNG or WebP · 5 MB</span>
-                                </div>
+                                    <span class="upload-note" data-upload-note>JPG, PNG or WebP · 5 MB</span>                                </div>
                             </div>
                             <div class="field">
-                                <label>Project URL <span class="form-note">(optional)</span></label>
-                                <input class="input" type="text" name="projects[{{ $i }}][url]" maxlength="500" value="{{ $project['url'] ?? '' }}" placeholder="https://">
+                                <label for="project-url-{{ $i }}">Project URL <span class="form-note">(optional)</span></label>
+                                <input class="input" id="project-url-{{ $i }}" type="text" name="projects[{{ $i }}][url]" maxlength="500" value="{{ $project['url'] ?? '' }}" placeholder="https://">
                             </div>
                         </div>
                     </div>
@@ -262,12 +261,12 @@
         <div class="repeat-item__body">
             <div class="field-row">
                 <div class="field">
-                    <label>Label</label>
-                    <input class="input" type="text" name="links[__INDEX__][label]" maxlength="40" data-repeat-title-input>
+                    <label for="link-label-__INDEX__">Label</label>
+                    <input class="input" id="link-label-__INDEX__" type="text" name="links[__INDEX__][label]" maxlength="40" data-repeat-title-input>
                 </div>
                 <div class="field">
-                    <label>URL</label>
-                    <input class="input" type="text" name="links[__INDEX__][url]" maxlength="500" placeholder="https://">
+                    <label for="link-url-__INDEX__">URL</label>
+                    <input class="input" id="link-url-__INDEX__" type="text" name="links[__INDEX__][url]" maxlength="500" placeholder="https://">
                 </div>
             </div>
         </div>
@@ -288,21 +287,21 @@
         <div class="repeat-item__body">
             <div class="field-row">
                 <div class="field">
-                    <label>Project title</label>
-                    <input class="input" type="text" name="projects[__INDEX__][title]" maxlength="100" data-repeat-title-input>
+                    <label for="project-title-__INDEX__">Project title</label>
+                    <input class="input" id="project-title-__INDEX__" type="text" name="projects[__INDEX__][title]" maxlength="100" data-repeat-title-input>
                 </div>
                 <div class="field">
-                    <label>Year</label>
-                    <input class="input" type="text" name="projects[__INDEX__][year]" maxlength="20">
+                    <label for="project-year-__INDEX__">Year</label>
+                    <input class="input" id="project-year-__INDEX__" type="text" name="projects[__INDEX__][year]" maxlength="20">
                 </div>
             </div>
             <div class="field">
-                <label>Role</label>
-                <input class="input" type="text" name="projects[__INDEX__][role]" maxlength="80" placeholder="Identity, print">
+                <label for="project-role-__INDEX__">Role</label>
+                <input class="input" id="project-role-__INDEX__" type="text" name="projects[__INDEX__][role]" maxlength="80" placeholder="Identity, print">
             </div>
             <div class="field">
-                <label>Short description</label>
-                <textarea class="textarea" name="projects[__INDEX__][summary]" maxlength="500"></textarea>
+                <label for="project-summary-__INDEX__">Short description</label>
+                <textarea class="textarea" id="project-summary-__INDEX__" name="projects[__INDEX__][summary]" maxlength="500"></textarea>
             </div>
             <div class="project-image" data-image-field>
                 <div class="project-image__thumb" data-image-thumb>
@@ -319,8 +318,8 @@
                 </div>
             </div>
             <div class="field">
-                <label>Project URL <span class="form-note">(optional)</span></label>
-                <input class="input" type="text" name="projects[__INDEX__][url]" maxlength="500" placeholder="https://">
+                <label for="project-url-__INDEX__">Project URL <span class="form-note">(optional)</span></label>
+                <input class="input" id="project-url-__INDEX__" type="text" name="projects[__INDEX__][url]" maxlength="500" placeholder="https://">
             </div>
         </div>
     </div>

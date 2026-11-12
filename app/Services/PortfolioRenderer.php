@@ -107,7 +107,7 @@ class PortfolioRenderer
         $js = (string) ($portfolio->js ?? '');
         $title = e($portfolio->title ?: 'A portfolio on Portside');
         $description = e($portfolio->description ?: 'A hand-coded portfolio made with Portside.');
-        $fonts = '<link rel="stylesheet" href="'.e(asset('assets/css/fonts.css')).'">';
+        $fonts = '<link rel="stylesheet" href="'.e(asset('assets/css/code-fonts.css')).'">';
         $theme = '<meta name="theme-color" content="#1B365D">';
         $styleTag = $css !== '' ? "<style id=\"portside-user-css\">\n{$css}\n</style>" : '';
         $scriptTag = $js !== '' ? "<script id=\"portside-user-js\">\n{$js}\n</script>" : '';

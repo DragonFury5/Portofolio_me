@@ -22,7 +22,7 @@
 @endphp
 <header class="studio-head">
     <div>
-        <p class="eyebrow">Portside Studio · @{{ $user->username }}</p>
+        <p class="eyebrow">Portside Studio · &#64;{{ $user->username }}</p>
         <h1>Your work,<br>in progress.</h1>
         <p>Pages you own, views without the vanity metrics, and a door back to the editor.</p>
         <div class="studio-head__meta">
@@ -142,7 +142,7 @@
                 <x-avatar :user="$user" :size="42" />
                 <div>
                     <h3>{{ $user->name }}</h3>
-                    <p>@{{ $user->username }}</p>
+                    <p>&#64;{{ $user->username }}</p>
                 </div>
             </div>
             <div class="side-card__links">

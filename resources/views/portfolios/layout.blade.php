@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/portfolio.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/overrides.css') }}">
 </head>
-<body class="{{ $bodyClass }}{{ $isEmbed ? ' is-embed' : '' }}{{ $isPreview ? ' is-preview' : '' }}">
+<body class="{{ $bodyClass }}{{ $isEmbed ? ' is-embed' : '' }}{{ $isPreview ? ' is-preview' : '' }}" data-page-template="{{ $templateKey }}" data-page-accent="{{ $accent }}">
 @if ($showDraftBar)
     <div class="ps-draft-bar">
         <strong>Draft</strong>

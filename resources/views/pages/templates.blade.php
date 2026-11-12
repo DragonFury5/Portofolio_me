@@ -27,8 +27,7 @@
                 <div class="tpl-feature__preview">
                     <iframe src="{{ route('templates.preview', $key) }}?embed=1"
                             title="{{ $template['name'] }} template preview"
-                            loading="lazy" tabindex="-1" aria-hidden="true"
-                            sandbox="allow-scripts allow-forms allow-popups"></iframe>
+                            loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
                 </div>
                 <div class="tpl-feature__copy">
                     <span class="tpl-feature__no">{{ sprintf('%02d', $loop->iteration) }} / {{ $template['kicker'] }}</span>

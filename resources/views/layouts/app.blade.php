@@ -43,7 +43,7 @@
                     <x-icon name="chevron-down" :size="14" class="user-menu__chev" />
                 </summary>
                 <div class="user-menu__panel">
-                    <p class="user-menu__handle">@{{ $appUser->username }}</p>
+                    <p class="user-menu__handle">&#64;{{ $appUser->username }}</p>
                     <a href="{{ route('makers.show', $appUser->username) }}"><x-icon name="globe" :size="16" /> Public profile</a>
                     <a href="{{ route('settings.edit') }}"><x-icon name="settings" :size="16" /> Account settings</a>
                     <a href="{{ route('docs.code') }}"><x-icon name="code" :size="16" /> Code guide</a>
@@ -56,9 +56,34 @@
                     </form>
                 </div>
             </details>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="app-mobile-nav" aria-label="Open menu" data-nav-toggle>
+                <x-icon name="menu" :size="22" />
+            </button>
         </div>
     </div>
 </header>
+
+<div class="mobile-nav" id="app-mobile-nav" hidden>
+    <div class="wrap">
+        <nav class="mobile-nav__links" aria-label="Studio menu">
+            <a href="{{ route('dashboard') }}">Your pages</a>
+            <a href="{{ route('studio.portfolios.create') }}">New page</a>
+            <a href="{{ route('explore') }}">Explore</a>
+            <a href="{{ route('templates.index') }}">Templates</a>
+            <a href="{{ route('makers.show', $appUser->username) }}">Public profile</a>
+            <a href="{{ route('settings.edit') }}">Account settings</a>
+            @if ($appUser->is_admin)
+                <a href="{{ route('admin.index') }}">Moderation</a>
+            @endif
+        </nav>
+        <div class="mobile-nav__actions">
+            <form method="post" action="{{ route('logout') }}">
+                @csrf
+                <button class="btn btn--outline btn--block" type="submit">Log out</button>
+            </form>
+        </div>
+    </div>
+</div>
 
 <main id="main" class="app-main">
     <div class="wrap app-shell">

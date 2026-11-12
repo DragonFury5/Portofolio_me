@@ -155,7 +155,7 @@
             <form method="post" action="{{ route('studio.portfolios.publish', $portfolio) }}" style="margin-top: 14px;">
                 @csrf
                 <input type="hidden" name="published" value="{{ $portfolio->is_published ? '0' : '1' }}">
-                <button class="btn btn--sm {{ $portfolio->is_published ? 'btn--outline' : 'btn--outline' }} btn--block" type="submit">
+                <button class="btn btn--outline btn--sm btn--block" type="submit">
                     {{ $portfolio->is_published ? 'Unpublish page' : 'Publish page' }}
                 </button>
             </form>

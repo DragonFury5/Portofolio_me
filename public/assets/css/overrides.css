@@ -4,8 +4,7 @@
    original design tokens live in site.css and portfolio.css.
    ========================================================================== */
 
-/* Public portfolio badge now holds two links: the maker badge and a report link. */
-.ps-badge {
+/* Public portfolio badge now holds two links: the maker badge and a report link. */.ps-badge {
     gap: 8px;
     padding: 6px 9px;
 }
@@ -242,6 +241,28 @@ label.editor-icon-btn {
     font-size: 20px;
 }
 
+/* Live previews render at the frame's actual width instead of scaling a
+   200% iframe. The templates are responsive, so the smaller viewport still
+   reads clearly and avoids blank paint areas in some Chromium builds. */
+.explore-card__frame iframe,
+.work-card__frame iframe,
+.tpl-feature__preview iframe,
+.maker-site__frame iframe {
+    width: 100%;
+    height: 100%;
+    transform: none;
+    transform-origin: top left;
+    pointer-events: none;
+    background: var(--surface-card);
+}
+
+/* The source-code card is taller than the small harbour note in some
+   viewports. Let the note sit below the card rather than across its footer. */
+.hero-note {
+    bottom: -28px;
+    left: 0;
+}
+
 /* Compact mobile adjustments for app-specific rows. */
 @media (max-width: 940px) {
     .editor-head__actions {
@@ -272,6 +293,27 @@ label.editor-icon-btn {
 }
 
 @media (max-width: 680px) {
+    .site-head__inner,
+    .app-head__inner {
+        gap: 8px;
+    }
+
+    .head-actions,
+    .app-head__left,
+    .app-head__right {
+        gap: 8px;
+    }
+
+    .user-menu__name,
+    .user-menu__chev,
+    .app-head__tag {
+        display: none;
+    }
+
+    .app-head__new {
+        padding-inline: 10px;
+    }
+
     .field-row,
     .field-row--3 {
         grid-template-columns: 1fr;

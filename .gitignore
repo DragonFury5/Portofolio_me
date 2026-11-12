@@ -25,3 +25,13 @@ _ide_helper.php
 Homestead.json
 Homestead.yaml
 Thumbs.db
+
+# Local reference material, visual audits, and generated uploads.
+/.reference
+/.browser
+/.chrome-profile
+/.npm-cache
+/.screenshots
+/public/uploads/*
+!/public/uploads/.htaccess
+!.gitkeep

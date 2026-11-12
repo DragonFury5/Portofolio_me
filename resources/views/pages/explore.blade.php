@@ -72,7 +72,7 @@
                                 title="Preview of {{ $portfolio->title }}"
                                 loading="{{ $index < 3 ? 'eager' : 'lazy' }}"
                                 tabindex="-1" aria-hidden="true"
-                                sandbox="allow-scripts allow-forms allow-popups allow-modals"></iframe>
+                                @if ($portfolio->isCode()) sandbox="allow-scripts allow-forms allow-popups allow-modals" @endif></iframe>
                     </div>
                     <div class="explore-card__meta">
                         <div>

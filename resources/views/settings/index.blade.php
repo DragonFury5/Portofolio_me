@@ -141,7 +141,7 @@
                 <x-avatar :user="$user" :size="48" />
                 <div>
                     <h3>{{ $user->name }}</h3>
-                    <p>@{{ $user->username }}</p>
+                    <p>&#64;{{ $user->username }}</p>
                 </div>
             </div>
             @if ($user->bio)

@@ -28,6 +28,7 @@ Route::get('/terms', [PageController::class, 'terms'])->name('terms');
 Route::get('/privacy', [PageController::class, 'privacy'])->name('privacy');
 Route::get('/sitemap.xml', [PageController::class, 'sitemap'])->name('sitemap');
 Route::get('/robots.txt', [PageController::class, 'robots'])->name('robots');
+Route::get('/fonts/{file}', [PageController::class, 'font'])->where('file', '[A-Za-z0-9._-]+')->name('fonts.show');
 
 Route::get('/p/{slug}', [PublicPortfolioController::class, 'show'])->name('portfolios.show');
 Route::get('/u/{username}', [MakerController::class, 'show'])->name('makers.show');

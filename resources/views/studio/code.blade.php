@@ -3,6 +3,10 @@
 @section('title', 'Code · '.$portfolio->title.' · Portside Studio')
 @section('body_class', 'app-body app-body--flush')
 
+@push('head')
+    <link rel="stylesheet" href="{{ asset('assets/css/code-fonts.css') }}" data-code-fonts>
+@endpush
+
 @section('content')
 @php
     $kb = fn (string $value): string => number_format(strlen($value) / 1000, 1).' KB';
@@ -129,7 +133,6 @@
             <div class="preview-stage" data-preview-stage>
                 <iframe
                     id="code-preview"
-                    src="{{ route('studio.portfolios.preview', $portfolio) }}"
                     title="Live code preview"
                     sandbox="allow-scripts allow-forms allow-popups allow-modals allow-downloads"
                 ></iframe>

@@ -221,9 +221,10 @@ class TemplateRegistry
         }
 
         $content['links'] = $links;
+        $rawProjects = (array) ($content['projects'] ?? []);
         $content['projects'] = [];
 
-        foreach (array_slice((array) ($content['projects'] ?? []), 0, self::LIMITS['projects']) as $project) {
+        foreach (array_slice($rawProjects, 0, self::LIMITS['projects']) as $project) {
             if (! is_array($project)) {
                 continue;
             }

@@ -7,6 +7,7 @@ use App\Models\PortfolioView;
 use App\Services\PortfolioRenderer;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
 
 class PublicPortfolioController extends Controller
@@ -50,12 +51,16 @@ class PublicPortfolioController extends Controller
 
         $portfolio->increment('views');
 
-        $daily = PortfolioView::firstOrNew([
-            'portfolio_id' => $portfolio->id,
-            'day' => $today,
-        ]);
-
-        $daily->count = (int) ($daily->count ?? 0) + 1;
-        $daily->save();
+        DB::table('portfolio_views')->upsert(
+            [[
+                'portfolio_id' => $portfolio->id,
+                'day' => $today,
+                'count' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]],
+            ['portfolio_id', 'day'],
+            ['count' => DB::raw('portfolio_views.count + 1'), 'updated_at' => now()],
+        );
     }
 }

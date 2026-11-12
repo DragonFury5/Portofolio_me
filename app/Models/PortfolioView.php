@@ -16,7 +16,6 @@ class PortfolioView extends Model
     protected function casts(): array
     {
         return [
-            'day' => 'date',
             'count' => 'integer',
         ];
     }

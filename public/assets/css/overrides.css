@@ -1,0 +1,353 @@
+/* ==========================================================================
+   Portside application details
+   Everything here supports interactions added by the Laravel app. The
+   original design tokens live in site.css and portfolio.css.
+   ========================================================================== */
+
+/* Public portfolio badge now holds two links: the maker badge and a report link. */
+.ps-badge {
+    gap: 8px;
+    padding: 6px 9px;
+}
+
+.ps-badge__home {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: inherit;
+}
+
+.ps-badge__report {
+    padding-left: 8px;
+    border-left: 1px solid rgba(22, 40, 63, 0.18);
+    color: var(--blue);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.ps-badge__report:hover {
+    color: var(--navy);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+/* Dashboard page thumbnails with no project image yet. */
+.site-row__blank {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    background:
+        linear-gradient(135deg, transparent 48%, rgba(0, 90, 156, 0.08) 48% 52%, transparent 52%),
+        var(--surface-tint);
+    font-family: var(--font-display);
+    font-size: 28px;
+    color: var(--brand-secondary);
+}
+
+.site-row__thumb--empty {
+    background: var(--surface-sunken);
+}
+
+/* Studio checklist. */
+.side-checks {
+    display: grid;
+    gap: 9px;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+}
+
+.side-checks > span {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 12px;
+    line-height: 1.45;
+    color: var(--ink-muted);
+}
+
+.side-checks .icon {
+    margin-top: 1px;
+    color: var(--ink-faint);
+}
+
+.side-checks .is-done {
+    color: var(--ink);
+}
+
+.side-checks .is-done .icon {
+    color: var(--success);
+}
+
+/* User menu details: make repeated menus keyboard-friendly. */
+.user-menu__trigger {
+    cursor: pointer;
+}
+
+/* Textareas and fields inside repeaters. */
+.repeat-item__body .field-row {
+    margin-top: 0;
+}
+
+.repeat-item__body .field > label {
+    font-size: 11px;
+}
+
+.repeat-item[data-project-item] .repeat-item__body > .field {
+    margin-top: 0;
+}
+
+/* A long first row on the dashboard's page rows. */
+.site-row__link .icon {
+    flex: 0 0 auto;
+}
+
+/* Content preview support for the phone toggle. */
+.preview-frame--mobile {
+    display: flex;
+    justify-content: center;
+    padding: 16px;
+    background: var(--surface-sunken);
+}
+
+.preview-frame--mobile iframe {
+    width: 390px;
+    max-width: 100%;
+    height: 100%;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: var(--shadow-card);
+}
+
+/* Code editor. The original stylesheet expects a highlight overlay; we use
+   a plain, readable textarea and grow it to the content height. */
+.code-tab {
+    border: 0;
+    background: transparent;
+    font: inherit;
+}
+
+.code-pane[hidden] {
+    display: none !important;
+}
+
+.code-input {
+    color: #d5e6ee;
+    caret-color: #eaf6fa;
+    height: auto;
+    min-height: 100%;
+    overflow: hidden;
+    border-radius: 0;
+    background: transparent;
+    font-family: var(--font-mono);
+}
+
+.code-input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.code-input::selection {
+    background: rgba(96, 193, 229, 0.28);
+    color: #eaf6fa;
+}
+
+.code-editor-scroll {
+    align-items: flex-start;
+}
+
+.line-numbers {
+    min-height: 100%;
+}
+
+.code-edit-wrap {
+    min-height: 100%;
+}
+
+.editor-icon-btn[type="button"],
+label.editor-icon-btn {
+    cursor: pointer;
+    position: relative;
+}
+
+.editor-icon-btn input[type="file"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.editor-statusbar strong {
+    color: #b9c6cf;
+    font-weight: 500;
+}
+
+.editor-bar__right {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.editor-bar__right .editor-status {
+    margin-right: 0;
+}
+
+.editor-btn {
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid rgba(160, 224, 239, 0.24);
+    font-family: var(--font-body);
+}
+
+.editor-btn--save,
+.editor-btn--publish {
+    background: var(--brand-support);
+    border-color: var(--brand-support);
+}
+
+.editor-btn--publish {
+    background: var(--brand-accent);
+    border-color: var(--brand-accent);
+}
+
+/* Code error text from validation. */
+.editor-status.is-error {
+    max-width: 42ch;
+    white-space: normal;
+    line-height: 1.4;
+}
+
+/* The delete dialog's form needs no extra gap. */
+.starter-dialog form {
+    margin: 0;
+}
+
+.starter-dialog .starter-dialog__head {
+    align-items: flex-start;
+}
+
+/* Publish controls in the settings aside. */
+.side-card form .btn {
+    margin-top: 2px;
+}
+
+/* Make the account avatar crop inside the preview square. */
+.project-image__thumb .avatar {
+    --avatar-size: 64px !important;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    font-size: 20px;
+}
+
+/* Compact mobile adjustments for app-specific rows. */
+@media (max-width: 940px) {
+    .editor-head__actions {
+        width: 100%;
+    }
+
+    .editor-head__actions .autosave {
+        margin-right: auto;
+    }
+
+    .editor-bar__right {
+        gap: 4px;
+    }
+
+    .editor-status {
+        width: 100%;
+        justify-content: flex-end;
+        margin-bottom: 2px;
+    }
+
+    .settings-aside {
+        grid-template-columns: 1fr;
+    }
+
+    .settings-aside > :first-child {
+        grid-column: auto;
+    }
+}
+
+@media (max-width: 680px) {
+    .field-row,
+    .field-row--3 {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-strip {
+        grid-template-columns: 1fr;
+    }
+
+    .stat {
+        border-left: 0;
+        border-top: 1px solid var(--border);
+        padding-left: 0;
+    }
+
+    .stat:first-child {
+        border-top: 0;
+    }
+
+    .site-row {
+        grid-template-columns: 76px minmax(0, 1fr) auto;
+        gap: 12px;
+    }
+
+    .site-row__actions {
+        gap: 2px;
+    }
+
+    .site-row__actions .btn--icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .editor-head__actions .btn {
+        flex: 1;
+    }
+
+    .editor-head__actions .autosave {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .editor-bar {
+        gap: 8px;
+        padding: 8px 10px;
+    }
+
+    .editor-bar__title strong {
+        max-width: 18ch;
+    }
+
+    .editor-bar__right {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .editor-bar__right .editor-btn {
+        flex: 1;
+        justify-content: center;
+    }
+
+    .preview-stage {
+        padding: 10px;
+    }
+
+    .editor-statusbar {
+        gap: 6px 12px;
+    }
+
+    .editor-statusbar__note {
+        margin-left: 0;
+    }
+
+    .ps-badge {
+        right: 10px;
+        bottom: 10px;
+        font-size: 8px;
+    }
+}

@@ -11,6 +11,7 @@
     <link rel="icon" href="{{ asset('assets/img/favicon.svg') }}" type="image/svg+xml">
     <link rel="stylesheet" href="{{ asset('assets/css/fonts.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/site.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/overrides.css') }}">
 </head>
 <body class="auth-body">
 <a class="skip-link" href="#auth-form">Skip to form</a>

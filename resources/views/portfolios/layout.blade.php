@@ -28,6 +28,7 @@
     <link rel="icon" href="{{ asset('assets/img/favicon.svg') }}" type="image/svg+xml">
     <link rel="stylesheet" href="{{ asset('assets/css/fonts.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/portfolio.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/overrides.css') }}">
 </head>
 <body class="{{ $bodyClass }}{{ $isEmbed ? ' is-embed' : '' }}{{ $isPreview ? ' is-preview' : '' }}">
 @if ($showDraftBar)

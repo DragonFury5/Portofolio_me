@@ -1,0 +1,119 @@
+/* Everything here is yours. Change the variables first. */
+:root {
+  --paper: #f7f4ec;
+  --ink: #1b365d;
+  --line: #d8d2c2;
+  --accent: #005a9c;
+  --body: "Public Sans", "Segoe UI", sans-serif;
+  --display: "Fraunces", Georgia, serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  width: min(100% - 48px, 980px);
+  margin: 0 auto;
+  padding: 72px 0 96px;
+}
+
+.label {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+h1 {
+  max-width: 15ch;
+  margin: 28px 0 24px;
+  font-family: var(--display);
+  font-size: clamp(42px, 7vw, 82px);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+}
+
+h1 em {
+  font-style: italic;
+  text-decoration: underline;
+  text-decoration-color: #60c1e5;
+  text-decoration-thickness: 4px;
+  text-underline-offset: 8px;
+}
+
+.lede {
+  max-width: 52ch;
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #43536a;
+}
+
+.work { margin-top: 88px; }
+
+.section-title {
+  margin: 0 0 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.project {
+  display: grid;
+  grid-template-columns: 40px 1fr auto;
+  gap: 16px;
+  align-items: baseline;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+  color: inherit;
+  text-decoration: none;
+  transition: padding-left 180ms ease, color 180ms ease;
+}
+
+.project:first-of-type { border-top: 1px solid var(--line); margin-top: 16px; }
+.project:hover { padding-left: 8px; color: var(--accent); }
+
+.project__no,
+.project__meta {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6b7686;
+}
+
+.project__title {
+  font-family: var(--display);
+  font-size: clamp(22px, 3vw, 30px);
+  letter-spacing: -0.02em;
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 88px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+}
+
+.footer p { margin: 0; color: #6b7686; }
+.footer a { color: var(--accent); text-underline-offset: 3px; }
+
+@media (max-width: 620px) {
+  .project { grid-template-columns: 32px 1fr; }
+  .project__meta { grid-column: 2; }
+  .page { padding-top: 48px; }
+}

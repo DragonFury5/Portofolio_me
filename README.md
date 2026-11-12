@@ -4,6 +4,17 @@ A multi-user portfolio host built with Laravel. People can publish a considered 
 
 The interface follows the supplied design system and its three-colour palette: deep navy `#1B365D`, harbour blue `#005A9C`, and signal cyan `#60C1E5` on warm paper. Fraunces and Public Sans are self-hosted; Lucide-style inline icons keep the interface free of emoji.
 
+## A look at it
+
+![Portside home page](docs/screenshots/home.webp)
+
+![The studio dashboard](docs/screenshots/studio.webp)
+
+![The custom-code editor with a live sandboxed preview](docs/screenshots/code-studio.webp)
+
+![Mobile studio with the navigation open](docs/screenshots/mobile-studio.webp)
+
+
 ## What is included
 
 - Two ways to make a page: four shared-content templates (Ledger, Atlas, Signal, Tide) or a hand-coded page.
@@ -12,7 +23,7 @@ The interface follows the supplied design system and its three-colour palette: d
 - Public portfolio pages, a searchable/filterable Explore, maker profiles, SEO metadata and sitemap.
 - Accounts, profiles, avatars, password changes, four-page beta limit, daily view counts and a small report/moderation desk.
 - Security: CSRF-protected forms, rate-limited auth and reports, escaped template content, allow-listed links, raster-only re-encoded uploads, and opaque-origin sandboxing for user JavaScript.
-- A seeded demo: nine makers, nine live pages and one draft, so the site is not empty on first boot.
+- A seeded demo: nine makers, nine live pages and two drafts, so the site is not empty on first boot.
 
 ## Requirements
 
@@ -49,7 +60,7 @@ On Windows, `copy .env.example .env` works in place of `cp`. `composer setup` pe
 | Maker studio | `demo@portside.test` | `portside-demo` |
 | Moderation desk | `admin@portside.test` | `portside-admin` |
 
-The demo maker owns a published template page and a draft. Every other seeded maker has a password that is not published. Use the demo account to inspect the editors.
+The demo maker owns a published template page, a private code page and a draft template. Every other seeded maker has a password that is not published. Use the demo account to inspect both editors.
 
 ### Laragon
 

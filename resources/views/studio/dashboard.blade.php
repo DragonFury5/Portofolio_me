@@ -31,8 +31,10 @@
             <a href="{{ route('settings.edit') }}">Account settings</a>
         </div>
     </div>
-    @if ($pages->isNotEmpty())
+    @if ($pages->count() < $maxPages)
         <a class="btn btn--primary" href="{{ route('studio.portfolios.create') }}"><x-icon name="plus" :size="16" /> New page</a>
+    @else
+        <span class="btn btn--outline" aria-disabled="true"><x-icon name="check" :size="16" /> All page slots used</span>
     @endif
 </header>
 

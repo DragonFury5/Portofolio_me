@@ -326,6 +326,19 @@ class DatabaseSeeder extends Seeder
                 ],
             ],
             [
+                'user' => 'demo', 'slug' => 'demo-code', 'mode' => 'code',
+                'title' => 'Demo Maker — Code study',
+                'description' => 'A hand-coded demo page. Open the code editor, move the type, publish it when you like.',
+                'featured' => false, 'published' => false, 'created' => 3, 'updated' => 2,
+                'html' => str_replace(
+                    ['Harbour<br>Notes', 'hello@example.com'],
+                    ['Demo<br>Maker', 'demo@portside.test'],
+                    $editorial['html']
+                ),
+                'css' => $editorial['css'],
+                'js' => $editorial['js'],
+            ],
+            [
                 'user' => 'demo', 'slug' => 'demo-draft', 'template' => 'atlas', 'accent' => 'cyan',
                 'title' => 'A second page, still a draft',
                 'description' => 'A draft page. Only the demo account can see it until it is published.',

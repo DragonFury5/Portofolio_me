@@ -34,7 +34,7 @@
 
         <div class="site-foot__bottom">
             <p>© {{ date('Y') }} Portside. Open beta, built by hand.</p>
-            <p>Laravel · SQLite · no trackers, no ad slot.</p>
+            <p>Laravel · hand-built CSS · no trackers, no ad slot.</p>
         </div>
     </div>
 </footer>

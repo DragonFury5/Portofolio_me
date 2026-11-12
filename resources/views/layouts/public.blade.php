@@ -33,11 +33,18 @@
     <link rel="stylesheet" href="{{ asset('assets/css/fonts.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/site.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/overrides.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/motion.css') }}">
     @stack('head')
 </head>
 <body class="site-body {{ $bodyClass }}">
 <a class="skip-link" href="#main">Skip to content</a>
 @include('partials.site-header')
+<div class="scroll-progress" data-scroll-progress aria-hidden="true"><span></span></div>
+<div class="spew-origin" data-spew-origin aria-hidden="true">
+    <span class="spew-origin__ring"></span>
+    <span class="spew-origin__ring"></span>
+    <span class="spew-origin__core"></span>
+</div>
 
 <main id="main">
     @include('partials.flashes')
@@ -46,6 +53,7 @@
 
 @include('partials.site-footer')
 <script src="{{ asset('assets/js/site.js') }}" defer></script>
+<script src="{{ asset('assets/js/motion.js') }}" defer></script>
 @stack('scripts')
 </body>
 </html>

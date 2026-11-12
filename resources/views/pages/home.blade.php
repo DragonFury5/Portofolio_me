@@ -6,33 +6,41 @@
 @section('body_class', 'home')
 
 @section('content')
-<section class="hero">
-    <div class="wrap hero__grid">
-        <div class="hero__copy">
-            <p class="eyebrow">Portfolio hosting · Open beta</p>
-            <h1>Your work,<br>at <span class="hero__home">home.</span></h1>
-            <p class="hero__sub">
-                A real page on the web, not a profile in someone else’s grid. Start from a
-                <strong>considered template</strong>, or write the <strong>HTML, CSS and JS</strong> yourself.
-                Publish to a link you can hand to anyone.
-            </p>
-            <div class="hero__ctas">
-                <a class="btn btn--primary btn--lg" href="{{ auth()->check() ? route('dashboard') : route('register') }}">
-                    {{ auth()->check() ? 'Open your studio' : 'Start a portfolio' }} <x-icon name="arrow-right" :size="17" />
-                </a>
-                <a class="link-arrow" href="{{ route('explore') }}">See what people built <x-icon name="arrow-up-right" :size="15" /></a>
-            </div>
-            <p class="hero__fine">
-                <span><x-icon name="check" :size="13" /> Free while in beta</span>
-                <span><x-icon name="check" :size="13" /> Your markup stays yours</span>
-                <span><x-icon name="check" :size="13" /> No card, no ads</span>
-            </p>
+<div class="hero-cinema" data-hero-cinema>
+    <div class="hero-cinema__sticky">
+        <div class="hero-rift" data-hero-rift aria-hidden="true">
+            <span class="hero-rift__ring"></span>
+            <span class="hero-rift__ring"></span>
+            <span class="hero-rift__core"></span>
         </div>
 
-        <div class="hero-art" aria-label="A portfolio page shown next to its source code">
-            <div class="hero-code" aria-hidden="true">
-                <div class="hero-code__bar"><i></i><i></i><i></i><em>portfolio.css</em></div>
-                <pre><code><span class="c-comment">/* made by hand, not by a wizard */</span>
+        <section class="hero" aria-label="Portside introduction">
+            <div class="wrap hero__grid">
+                <div class="hero__copy">
+                    <p class="eyebrow" data-suck>Portfolio hosting · Open beta</p>
+                    <h1 data-suck>Your work,<br>at <span class="hero__home">home.</span></h1>
+                    <p class="hero__sub" data-suck>
+                        A real page on the web, not a profile in someone else’s grid. Start from a
+                        <strong>considered template</strong>, or write the <strong>HTML, CSS and JS</strong> yourself.
+                        Publish to a link you can hand to anyone.
+                    </p>
+                    <div class="hero__ctas" data-suck>
+                        <a class="btn btn--primary btn--lg" href="{{ auth()->check() ? route('dashboard') : route('register') }}">
+                            {{ auth()->check() ? 'Open your studio' : 'Start a portfolio' }} <x-icon name="arrow-right" :size="17" />
+                        </a>
+                        <a class="link-arrow" href="{{ route('explore') }}">See what people built <x-icon name="arrow-up-right" :size="15" /></a>
+                    </div>
+                    <p class="hero__fine" data-suck>
+                        <span><x-icon name="check" :size="13" /> Free while in beta</span>
+                        <span><x-icon name="check" :size="13" /> Your markup stays yours</span>
+                        <span><x-icon name="check" :size="13" /> No card, no ads</span>
+                    </p>
+                </div>
+
+                <div class="hero-art" aria-label="A portfolio page shown next to its source code">
+                    <div class="hero-code" data-suck aria-hidden="true">
+                        <div class="hero-code__bar"><i></i><i></i><i></i><em>portfolio.css</em></div>
+                        <pre><code><span class="c-comment">/* made by hand, not by a wizard */</span>
 <span class="c-tag">.page</span> {
   <span class="c-prop">max-width</span>: <span class="c-num">72ch</span>;
   <span class="c-prop">display</span>: grid;
@@ -44,43 +52,50 @@
   <span class="c-prop">scroll</span>: <span class="c-num">480</span>,
   <span class="c-prop">bounce</span>: <span class="c-num">false</span>
 };</code></pre>
-            </div>
-
-            <div class="hero-window">
-                <div class="browser-bar">
-                    <span class="browser-dots"><i></i><i></i><i></i></span>
-                    <span class="browser-url">portside.test/p/mara-ellison</span>
-                    <span class="browser-live">Live</span>
-                </div>
-                <div class="mini-site">
-                    <div class="mini-site__head">
-                        <strong>Mara Ellison</strong>
-                        <span>Work / About</span>
                     </div>
-                    <p class="mini-site__kicker">Graphic design · Rotterdam</p>
-                    <h3>Printed matter for people who still <em>read.</em></h3>
-                    <div class="mini-site__grid">
-                        <figure>
-                            <img src="{{ asset('assets/img/seed/harbor-mark.svg') }}" alt="" loading="eager">
-                            <figcaption><span>01 Harbor identity</span><span>2025</span></figcaption>
-                        </figure>
-                        <figure>
-                            <img src="{{ asset('assets/img/seed/silt-specimen.svg') }}" alt="" loading="eager">
-                            <figcaption><span>02 Silt</span><span>2024</span></figcaption>
-                        </figure>
+
+                    <div class="hero-window" data-suck>
+                        <div class="browser-bar">
+                            <span class="browser-dots"><i></i><i></i><i></i></span>
+                            <span class="browser-url">portside.test/p/mara-ellison</span>
+                            <span class="browser-live">Live</span>
+                        </div>
+                        <div class="mini-site">
+                            <div class="mini-site__head">
+                                <strong>Mara Ellison</strong>
+                                <span>Work / About</span>
+                            </div>
+                            <p class="mini-site__kicker">Graphic design · Rotterdam</p>
+                            <h3>Printed matter for people who still <em>read.</em></h3>
+                            <div class="mini-site__grid">
+                                <figure>
+                                    <img src="{{ asset('assets/img/seed/harbor-mark.svg') }}" alt="" loading="eager">
+                                    <figcaption><span>01 Harbor identity</span><span>2025</span></figcaption>
+                                </figure>
+                                <figure>
+                                    <img src="{{ asset('assets/img/seed/silt-specimen.svg') }}" alt="" loading="eager">
+                                    <figcaption><span>02 Silt</span><span>2024</span></figcaption>
+                                </figure>
+                            </div>
+                            <p class="mini-site__foot"><span>Open for commissions</span><span>hello@mara.studio</span></p>
+                        </div>
                     </div>
-                    <p class="mini-site__foot"><span>Open for commissions</span><span>hello@mara.studio</span></p>
+
+                    <div class="hero-stamp" data-suck aria-hidden="true">Open<br>beta<br>{{ date('Y') }}</div>
+                    <div class="hero-note" data-suck aria-hidden="true">
+                        <svg viewBox="0 0 60 44" fill="none"><path d="M4 8c14 1 20 9 21 23" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M18 26l7 6 6-8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <span>Same page.<br>Both ways.</span>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="hero-stamp" aria-hidden="true">Open<br>beta<br>{{ date('Y') }}</div>
-            <div class="hero-note" aria-hidden="true">
-                <svg viewBox="0 0 60 44" fill="none"><path d="M4 8c14 1 20 9 21 23" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M18 26l7 6 6-8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <span>Same page.<br>Both ways.</span>
-            </div>
+        <div class="hero-cue" data-hero-cue aria-hidden="true">
+            <span>Scroll to enter</span>
+            <i></i>
         </div>
     </div>
-</section>
+</div>
 
 <div class="hero-strip">
     <div class="wrap hero-strip__inner">

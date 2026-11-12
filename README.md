@@ -20,6 +20,15 @@ The public side, including the live template previews:
 
 ![Ledger template rendered as a real portfolio](docs/screenshots/ledger.webp)
 
+## Scroll choreography
+
+The homepage has one deliberate set piece: as you scroll, the hero copy and artwork are pulled toward a fixed vanishing point under the top of the viewport while the next section emerges from a source point at the bottom centre. On the way back up, the pull reverses. Other marketing sections, cards and FAQ rows use staggered bottom-origin entrances, and a thin cyan progress line tracks the page.
+
+This is a small vanilla-JS layer (`public/assets/js/motion.js`) layered over CSS. There is no animation dependency and no build step. The effect is disabled automatically for `prefers-reduced-motion` and falls back to a completely static, fully readable page when JavaScript is unavailable. It runs on public pages only; the studio keeps its motion to state feedback so it remains a tool rather than a showreel.
+
+![Three frames from the homepage scroll sequence: the hero, its pull toward the top centre, then the next section emerging](docs/screenshots/scroll-sequence.webp)
+
+
 
 ## What is included
 

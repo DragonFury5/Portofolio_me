@@ -1,0 +1,431 @@
+/* ==========================================================================
+   Portside scroll choreography
+   The homepage has one deliberate set piece: the hero is pulled into the
+   harbour at the top, then the next layer of the page emerges from below.
+   The rest of the site gets quieter, staggered entrances. All of it is
+   disabled under prefers-reduced-motion.
+   ========================================================================== */
+
+:root {
+    --motion-exit: 0ms;
+    --motion-ease: cubic-bezier(0.16, 0.84, 0.24, 1);
+}
+
+/* ---------------------------------- Progress line --------------------------- */
+.scroll-progress {
+    position: fixed;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    z-index: 48;
+    height: 2px;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.scroll-progress span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: var(--brand-accent);
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition: transform 90ms linear;
+}
+
+/* -------------------------------- Suck: the hero --------------------------- */
+.site-body {
+    overflow-x: clip;
+}
+
+.mini-tpl__plates {
+    min-width: 0;
+}
+
+.mini-tpl__plates > * {
+    min-width: 0;
+}
+
+.hero-cinema {
+    position: relative;
+}
+
+.hero-cinema__sticky {
+    position: relative;
+}
+
+.hero-rift {
+    display: none;
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    z-index: 8;
+    width: 1px;
+    height: 1px;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.hero-rift__core {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 7px;
+    height: 7px;
+    border: 1px solid var(--brand-accent);
+    background: var(--brand-primary);
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.hero-rift__ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 46px;
+    height: 46px;
+    border: 1px solid rgba(96, 193, 229, 0.55);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0.2);
+    opacity: 0;
+}
+
+.hero-rift.is-open .hero-rift__ring {
+    animation: rift-pulse 2.2s var(--motion-ease) infinite;
+}
+
+.hero-rift.is-open .hero-rift__ring:nth-child(2) {
+    animation-delay: 760ms;
+}
+
+.hero-rift.is-open .hero-rift__core {
+    animation: rift-core 2.2s ease-in-out infinite;
+}
+
+.hero-rift__ring:nth-child(3) {
+    display: none;
+}
+
+.hero-cue {
+    display: none;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    z-index: 6;
+    align-items: center;
+    gap: 9px;
+    transform: translateX(-50%);
+    color: var(--ink-faint);
+    font-family: var(--font-mono);
+    font-size: 8px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    line-height: 1;
+    text-transform: uppercase;
+    pointer-events: none;
+}
+
+.hero-cue i {
+    display: block;
+    width: 1px;
+    height: 30px;
+    background: var(--brand-secondary);
+    transform-origin: 50% 0;
+    animation: cue-tide 2.4s ease-in-out infinite;
+}
+
+html.cinema-enabled .hero-cue {
+    display: flex;
+}
+
+html.cinema-enabled .hero-cinema {
+    position: relative;
+    z-index: 2;
+}
+
+html.cinema-enabled .hero-cinema .hero {
+    overflow: visible;
+}
+
+html.cinema-enabled .hero-cinema .hero__grid {
+    align-items: center;
+}
+
+html.cinema-enabled .hero-cinema .hero-code {
+    --suck-base: -2.4deg;
+}
+
+html.cinema-enabled .hero-cinema .hero-window {
+    --suck-base: 0.55deg;
+}
+
+html.cinema-enabled .hero-cinema .hero-stamp {
+    --suck-base: 7deg;
+}
+
+html.cinema-enabled .hero-cinema .hero-note {
+    --suck-base: -4deg;
+}
+
+html.cinema-enabled [data-suck] {
+    --suck-x: 0px;
+    --suck-y: 0px;
+    --suck-scale: 1;
+    --suck-rotate: 0deg;
+    --suck-base: 0deg;
+    transform: translate3d(var(--suck-x), var(--suck-y), 0)
+        rotate(calc(var(--suck-base) + var(--suck-rotate)))
+        scale(var(--suck-scale));
+    transform-origin: 50% 50%;
+    will-change: transform, opacity, filter;
+}
+
+html.cinema-enabled .hero-cinema.is-collapsing .hero {
+    pointer-events: none;
+}
+
+html.cinema-enabled .hero-cinema.is-collapsing .hero-cue {
+    opacity: 0;
+    transition: opacity 180ms var(--ease);
+}
+
+html.cinema-enabled .hero-rift {
+    display: block;
+    position: fixed;
+    top: calc(var(--header-h) + 25px);
+    left: 50%;
+    z-index: 45;
+}
+
+html.cinema-enabled .hero-rift.is-open {
+    opacity: 1;
+    transition: opacity 260ms ease-out;
+}
+
+/* -------------------------------- Spew: content ---------------------------- */
+.scroll-reveal {
+    opacity: 0;
+}
+
+.scroll-reveal.is-armed {
+    opacity: 0;
+    transform: translate3d(var(--reveal-x, 0px), var(--reveal-y, 84px), 0)
+        scale(var(--reveal-scale, 0.86))
+        rotate(var(--reveal-rotate, 0deg));
+    filter: blur(7px);
+    will-change: transform, opacity, filter;
+}
+
+.scroll-reveal.is-revealed {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+    filter: blur(0);
+    transition:
+        transform 720ms var(--motion-ease) var(--reveal-delay, 0ms),
+        opacity 430ms ease-out var(--reveal-delay, 0ms),
+        filter 620ms ease-out var(--reveal-delay, 0ms);
+}
+
+/* A small visual source point at the bottom centre while content is being
+   ejected into place. It is decorative and never captures the pointer. */
+.spew-origin {
+    position: fixed;
+    left: 50%;
+    bottom: 8px;
+    z-index: 30;
+    width: 48px;
+    height: 48px;
+    transform: translateX(-50%);
+    pointer-events: none;
+    opacity: 0;
+}
+
+.spew-origin__core {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--brand-secondary);
+    box-shadow: 0 0 16px rgba(96, 193, 229, 0.65);
+    transform: translate(-50%, -50%);
+}
+
+.spew-origin__ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgba(0, 90, 156, 0.42);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0.2);
+    opacity: 0;
+}
+
+.spew-origin.is-live {
+    opacity: 1;
+}
+
+.spew-origin.is-live .spew-origin__ring {
+    animation: origin-ring 850ms var(--motion-ease) both;
+}
+
+.spew-origin.is-live .spew-origin__ring:nth-child(2) {
+    animation-delay: 110ms;
+}
+
+.spew-origin.is-live .spew-origin__core {
+    animation: origin-core 850ms var(--motion-ease) both;
+}
+
+/* ------------------------------- Page entrances ----------------------------- */
+@media (prefers-reduced-motion: no-preference) {
+    .page-hero > *,
+    .explore-head > *,
+    .maker-hero__grid > *,
+    .docs-toc {
+        animation: page-rise 640ms var(--motion-ease) both;
+    }
+
+    .page-hero > :nth-child(2),
+    .explore-head > :nth-child(2),
+    .maker-hero__grid > :nth-child(2) {
+        animation-delay: 55ms;
+    }
+
+    .page-hero > :nth-child(3),
+    .explore-head > :nth-child(3) {
+        animation-delay: 100ms;
+    }
+
+    .page-hero > :nth-child(4) {
+        animation-delay: 145ms;
+    }
+
+    .docs-toc {
+        animation-delay: 90ms;
+    }
+}
+
+@keyframes page-rise {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 14px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes cue-tide {
+    0%,
+    100% {
+        opacity: 0.35;
+        transform: scaleY(0.4);
+    }
+    50% {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+}
+
+@keyframes rift-pulse {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.18);
+    }
+    24% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1.7);
+    }
+}
+
+@keyframes rift-core {
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(96, 193, 229, 0.18);
+    }
+    50% {
+        box-shadow: 0 0 0 5px rgba(96, 193, 229, 0.06);
+    }
+}
+
+@keyframes origin-ring {
+    0% {
+        opacity: 0.8;
+        transform: translate(-50%, -50%) scale(0.2);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(2.5);
+    }
+}
+
+@keyframes origin-core {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.3);
+    }
+    22% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1.6);
+    }
+}
+
+/* ------------------------------- Reduced motion ----------------------------- */
+@media (prefers-reduced-motion: reduce) {
+    .scroll-progress span {
+        transition: none;
+    }
+
+    .hero-cue,
+    .hero-rift,
+    .spew-origin {
+        display: none !important;
+    }
+
+    .scroll-reveal,
+    .scroll-reveal.is-armed,
+    .scroll-reveal.is-revealed {
+        opacity: 1 !important;
+        filter: none !important;
+        transform: none !important;
+    }
+
+    .page-hero > *,
+    .explore-head > *,
+    .maker-hero__grid > *,
+    .docs-toc {
+        animation: none !important;
+    }
+}
+
+/* Shorter viewports keep the platform type comfortable while the scroll
+   choreography is active. */
+@media (max-height: 880px) and (min-width: 1000px) {
+    html.cinema-enabled .hero-cinema .hero h1 {
+        font-size: clamp(48px, 6.5vw, 86px);
+    }
+
+    html.cinema-enabled .hero-cue {
+        display: none;
+    }
+}
+
+@media (max-width: 999px) {
+    .hero-cue {
+        display: none;
+    }
+
+    .hero-rift {
+        display: none;
+    }
+}

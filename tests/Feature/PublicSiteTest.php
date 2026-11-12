@@ -13,7 +13,9 @@ class PublicSiteTest extends TestCase
 
     public function test_the_public_pages_render(): void
     {
-        $this->get(route('home'))->assertOk()->assertSee('Your work,')->assertSee('at ');
+        $this->get(route('home'))->assertOk()->assertSee('Your work,')->assertSee('at ')
+            ->assertSee('data-hero-cinema', false)
+            ->assertSee('assets/js/motion.js', false);
         $this->get(route('explore'))->assertOk()->assertSee('Work worth');
         $this->get(route('templates.index'))->assertOk()->assertSee('Templates that don');
         $this->get(route('templates.preview', 'ledger'))->assertOk()->assertSee('Ledger');

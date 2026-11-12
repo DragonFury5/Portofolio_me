@@ -290,6 +290,22 @@ label.editor-icon-btn {
     .settings-aside > :first-child {
         grid-column: auto;
     }
+
+    .work-card__meta {
+        flex-wrap: wrap;
+        gap: 4px 14px;
+    }
+
+    .work-card__meta h3,
+    .work-card__meta p {
+        min-width: 0;
+    }
+
+    .work-card__meta p {
+        max-width: 100%;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
 }
 
 @media (max-width: 680px) {

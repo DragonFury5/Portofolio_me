@@ -1,10 +1,14 @@
+@php
+    $authTitle = trim(strip_tags($__env->yieldContent('title'))) ?: 'Portside';
+    $authDescription = trim(strip_tags($__env->yieldContent('description'))) ?: 'Make a portfolio that is actually yours.';
+@endphp
 <!doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@yield('title', 'Portside')</title>
-    <meta name="description" content="@yield('description', 'Make a portfolio that is actually yours.')">
+    <title>{{ $authTitle }}</title>
+    <meta name="description" content="{{ $authDescription }}">
     <meta name="robots" content="noindex, nofollow">
     <meta name="theme-color" content="#1B365D">
     <meta name="csrf-token" content="{{ csrf_token() }}">

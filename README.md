@@ -14,6 +14,12 @@ The interface follows the supplied design system and its three-colour palette: d
 
 ![Mobile studio with the navigation open](docs/screenshots/mobile-studio.webp)
 
+The public side, including the live template previews:
+
+![Explore page](docs/screenshots/explore.webp)
+
+![Ledger template rendered as a real portfolio](docs/screenshots/ledger.webp)
+
 
 ## What is included
 

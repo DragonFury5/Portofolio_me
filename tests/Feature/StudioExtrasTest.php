@@ -150,6 +150,20 @@ class StudioExtrasTest extends TestCase
         $this->get(route('fonts.show', 'not-a-font.woff2'))->assertNotFound();
     }
 
+    public function test_page_titles_are_escaped_inside_the_studio_shell(): void
+    {
+        $user = User::factory()->create();
+        $portfolio = Portfolio::factory()->for($user)->create([
+            'title' => '</title><script>alert("studio")</script>',
+        ]);
+
+        $response = $this->actingAs($user)->get(route('studio.portfolios.content.edit', $portfolio));
+
+        $response->assertOk();
+        $response->assertDontSee('<script>alert("studio")</script>', false);
+        $response->assertSee('&lt;/title&gt;', false);
+    }
+
     public function test_the_custom_404_page_is_used(): void
     {
         $this->get('/this-page-is-not-here')

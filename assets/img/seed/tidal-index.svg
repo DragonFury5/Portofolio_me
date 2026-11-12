@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900"><defs><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.86" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter></defs><rect width="1200" height="900" fill="#f7f4ec"/>
+<rect x="55" y="55" width="1090" height="790" fill="none" stroke="#1b365d" stroke-width="1.5"/>
+<text x="100" y="145" font-family="Georgia, serif" font-size="58" fill="#1b365d">Tidal index</text>
+<text x="100" y="185" font-family="Segoe UI, Arial, sans-serif" font-size="15" letter-spacing="4" fill="#005a9c">TWELVE PLATES · 2026</text>
+<g stroke="#1b365d" stroke-width="1" opacity=".25">
+  <path d="M100 260h1000M100 360h1000M100 460h1000M100 560h1000M100 660h1000"/>
+</g>
+<path d="M100 600C220 520 300 620 420 540s180 90 300 10 200 60 380-20" fill="none" stroke="#005a9c" stroke-width="5"/>
+<path d="M100 600C220 520 300 620 420 540s180 90 300 10 200 60 380-20v120H100z" fill="#60c1e5" opacity=".55"/>
+<g fill="#1b365d">
+  <circle cx="100" cy="600" r="7"/><circle cx="420" cy="540" r="7"/><circle cx="720" cy="550" r="7"/><circle cx="1100" cy="530" r="7"/>
+</g>
+<g font-family="Segoe UI, Arial, sans-serif" font-size="15" letter-spacing="4" fill="#1b365d">
+  <text x="90" y="720">06:00</text><text x="390" y="720">12:00</text><text x="690" y="720">18:00</text><text x="1050" y="720">00:00</text>
+</g>
+<text x="100" y="800" font-family="Georgia, serif" font-size="24" font-style="italic" fill="#1b365d">a set of twelve plates for a small restaurant</text><rect width="1200" height="900" filter="url(#grain)" opacity="0.05"/></svg>

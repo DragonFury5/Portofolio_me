@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900"><defs><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.86" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter></defs><rect width="1200" height="900" fill="#10243d"/>
+<circle cx="880" cy="250" r="92" fill="#a0e0ef"/>
+<circle cx="914" cy="228" r="92" fill="#10243d"/>
+<g fill="#1b365d">
+  <rect y="470" width="1200" height="430"/>
+</g>
+<g fill="#005a9c">
+  <rect y="560" width="1200" height="18"/>
+  <rect y="620" width="1200" height="8" opacity=".7"/>
+  <rect y="690" width="1200" height="5" opacity=".5"/>
+  <rect y="760" width="1200" height="3" opacity=".4"/>
+</g>
+<g fill="#f7f4ec">
+  <path d="M310 560h490l-40 80H350z"/>
+  <rect x="400" y="490" width="300" height="70"/>
+  <rect x="440" y="455" width="180" height="36"/>
+</g>
+<g fill="#60c1e5">
+  <rect x="430" y="510" width="24" height="20"/>
+  <rect x="480" y="510" width="24" height="20"/>
+  <rect x="530" y="510" width="24" height="20"/>
+  <rect x="580" y="510" width="24" height="20"/>
+  <rect x="630" y="510" width="24" height="20"/>
+  <circle cx="690" cy="470" r="6"/>
+</g>
+<path d="M800 450V380" stroke="#f7f4ec" stroke-width="2"/>
+<circle cx="800" cy="376" r="5" fill="#a0e0ef"/>
+<g stroke="#60c1e5" stroke-width="2" opacity=".45">
+  <path d="M360 680h380M390 700h300M420 720h220"/>
+</g>
+<text x="70" y="110" font-family="Segoe UI, Arial, sans-serif" font-size="15" letter-spacing="4" fill="#a0e0ef">NIGHT FERRY / 2026</text>
+<text x="70" y="170" font-family="Georgia, serif" font-size="50" fill="#f7f4ec">Twelve crossings</text>
+<text x="1130" y="820" font-family="Segoe UI, Arial, sans-serif" font-size="15" letter-spacing="4" fill="#a0e0ef" text-anchor="end">PERSONAL SERIES</text><rect width="1200" height="900" filter="url(#grain)" opacity="0.05"/></svg>

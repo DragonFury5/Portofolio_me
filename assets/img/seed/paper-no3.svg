@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900"><defs><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.86" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter></defs><rect width="1200" height="900" fill="#fffdf8"/>
+<g stroke="#1b365d" stroke-width=".8" opacity=".12">
+  <path d="M0 100h1200M0 200h1200M0 300h1200M0 400h1200M0 500h1200M0 600h1200M0 700h1200M0 800h1200"/>
+  <path d="M100 0v900M200 0v900M300 0v900M400 0v900M500 0v900M600 0v900M700 0v900M800 0v900M900 0v900M1000 0v900M1100 0v900"/>
+</g>
+<circle cx="760" cy="330" r="230" fill="#005a9c"/>
+<rect x="250" y="470" width="520" height="300" fill="#a0e0ef" transform="rotate(-7 510 620)"/>
+<circle cx="760" cy="330" r="88" fill="#60c1e5"/>
+<text x="70" y="110" font-family="Segoe UI, Arial, sans-serif" font-size="15" letter-spacing="4" fill="#005a9c">PAPER N°3 / 2025</text>
+<text x="70" y="180" font-family="Georgia, serif" font-size="54" fill="#1b365d">Wrapping, uncoated</text>
+<text x="70" y="830" font-family="Segoe UI, Arial, sans-serif" font-size="15" letter-spacing="4" fill="#1b365d">INK ON PAPER · 3 THINGS ONLY</text>
+<text x="1120" y="830" font-family="Segoe UI, Arial, sans-serif" font-size="15" letter-spacing="4" fill="#1b365d" text-anchor="end">PACKAGING</text><rect width="1200" height="900" filter="url(#grain)" opacity="0.05"/></svg>

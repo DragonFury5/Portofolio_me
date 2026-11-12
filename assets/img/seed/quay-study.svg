@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900"><defs><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.86" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter></defs><rect width="1200" height="900" fill="#f2ecdf"/>
+<g stroke="#1b365d" stroke-width="1" opacity=".22">
+  <path d="M0 300h1200M0 600h1200M300 0v900M600 0v900M900 0v900"/>
+</g>
+<g>
+  <polygon points="300,610 520,540 740,610 520,690" fill="#a0e0ef"/>
+  <polygon points="300,610 520,690 520,830 300,745" fill="#1b365d"/>
+  <polygon points="520,690 740,610 740,750 520,830" fill="#005a9c"/>
+</g>
+<g>
+  <polygon points="640,410 800,355 960,410 800,465" fill="#60c1e5"/>
+  <polygon points="640,410 800,465 800,570 640,510" fill="#1b365d"/>
+  <polygon points="800,465 960,410 960,515 800,570" fill="#005a9c"/>
+</g>
+<g>
+  <polygon points="220,360 300,332 380,360 300,388" fill="#f7f4ec" stroke="#1b365d"/>
+  <polygon points="220,360 300,388 300,450 220,422" fill="#d8d2c2"/>
+  <polygon points="300,388 380,360 380,422 300,450" fill="#eae4d7"/>
+</g>
+<g stroke="#005a9c" stroke-width="1">
+  <path d="M170 610h120M170 590v40M740 610h120M860 590v40"/>
+</g>
+<text x="170" y="575" font-family="Segoe UI, Arial, sans-serif" font-size="15" letter-spacing="4" fill="#005a9c">1:20</text>
+<text x="70" y="110" font-family="Segoe UI, Arial, sans-serif" font-size="15" letter-spacing="4" fill="#005a9c">QUAY STUDY / 2026</text>
+<text x="70" y="170" font-family="Georgia, serif" font-size="50" fill="#1b365d">A harbour wall, in clay</text>
+<text x="1130" y="820" font-family="Segoe UI, Arial, sans-serif" font-size="15" letter-spacing="4" fill="#005a9c" text-anchor="end">EDITORIAL</text><rect width="1200" height="900" filter="url(#grain)" opacity="0.05"/></svg>

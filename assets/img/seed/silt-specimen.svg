@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900"><defs><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.86" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter></defs><rect width="1200" height="900" fill="#efe9dc"/>
+<g stroke="#1b365d" stroke-width="1" opacity=".18">
+  <path d="M300 0v900M600 0v900M900 0v900M0 300h1200M0 600h1200"/>
+</g>
+<rect x="80" y="560" width="1040" height="14" fill="#60c1e5"/>
+<text x="150" y="700" font-family="Georgia, 'Times New Roman', serif" font-size="540" letter-spacing="-40" fill="#1b365d">Aa</text>
+<text x="80" y="110" font-family="Segoe UI, Arial, sans-serif" font-size="15" letter-spacing="4" fill="#005a9c">SILT / TYPE SPECIMEN</text>
+<text x="80" y="155" font-family="Georgia, serif" font-size="40" fill="#1b365d">A workhorse serif</text>
+<path d="M80 235h180" stroke="#1b365d" stroke-width="1"/>
+<text x="80" y="280" font-family="Segoe UI, Arial, sans-serif" font-size="15" letter-spacing="4" fill="#1b365d">4 WEIGHTS</text>
+<text x="80" y="310" font-family="Segoe UI, Arial, sans-serif" font-size="15" letter-spacing="4" fill="#1b365d">1 STUBBORN ITALIC</text>
+<text x="1120" y="820" font-family="Georgia, serif" font-size="26" font-style="italic" fill="#1b365d" text-anchor="end">drawn slowly, 2024</text><rect width="1200" height="900" filter="url(#grain)" opacity="0.05"/></svg>

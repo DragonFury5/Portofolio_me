@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900"><defs><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.86" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter></defs><rect width="1200" height="900" fill="#1b365d"/>
+<g fill="none" stroke-linecap="round">
+  <path d="M-80 760C220 660 360 420 640 430s420 240 660 140" stroke="#60c1e5" stroke-width="2"/>
+  <path d="M-80 720C220 620 360 380 640 390s420 240 660 140" stroke="#a0e0ef" stroke-width="1.5" opacity=".8"/>
+  <path d="M-80 680C220 580 360 340 640 350s420 240 660 140" stroke="#f7f4ec" stroke-width="1.2" opacity=".6"/>
+  <path d="M-80 640C220 540 360 300 640 310s420 240 660 140" stroke="#60c1e5" stroke-width="1" opacity=".55"/>
+  <path d="M-80 600C220 500 360 260 640 270s420 240 660 140" stroke="#a0e0ef" stroke-width="1" opacity=".4"/>
+  <path d="M-80 560C220 460 360 220 640 230s420 240 660 140" stroke="#f7f4ec" stroke-width="1" opacity=".3"/>
+</g>
+<circle cx="640" cy="390" r="7" fill="#60c1e5"/>
+<text x="70" y="110" font-family="Segoe UI, Arial, sans-serif" font-size="15" letter-spacing="4" fill="#a0e0ef">THE LONG WAVE / 2024</text>
+<text x="1120" y="820" font-family="Segoe UI, Arial, sans-serif" font-size="15" letter-spacing="4" fill="#a0e0ef" text-anchor="end">FORTY MINUTES, TWENTY FRAMES</text><rect width="1200" height="900" filter="url(#grain)" opacity="0.05"/></svg>

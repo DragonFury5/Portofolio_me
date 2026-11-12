@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900"><defs><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.86" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter></defs><rect width="1200" height="900" fill="#f7f4ec"/>
+<g clip-path="url(#clip)">
+  <circle cx="610" cy="425" r="255" fill="#1b365d"/>
+  <path d="M300 520c150-80 300 55 470-20s220-40 300 10v390H300z" fill="#60c1e5"/>
+  <circle cx="610" cy="330" r="86" fill="#f7f4ec"/>
+  <circle cx="610" cy="330" r="22" fill="#1b365d"/>
+</g>
+<defs><clipPath id="clip"><circle cx="610" cy="425" r="255"/></clipPath></defs>
+<circle cx="610" cy="425" r="255" fill="none" stroke="#1b365d" stroke-width="1.5"/>
+<circle cx="862" cy="238" r="34" fill="#a0e0ef"/>
+<path d="M935 180v420M985 180v420M1035 180v420" stroke="#1b365d" stroke-width="1" opacity=".35"/>
+<text x="80" y="105" font-family="Segoe UI, Arial, sans-serif" font-size="15" letter-spacing="4" fill="#005a9c">HARBOR / IDENTITY</text>
+<text x="80" y="140" font-family="Georgia, serif" font-size="44" fill="#1b365d">Ferry co-op, 2025</text>
+<path d="M80 760h1040" stroke="#1b365d" stroke-width="1" opacity=".35"/>
+<text x="80" y="808" font-family="Segoe UI, Arial, sans-serif" font-size="15" letter-spacing="4" fill="#1b365d">WAYFINDING · TICKETS · MARK</text>
+<text x="1040" y="808" font-family="Segoe UI, Arial, sans-serif" font-size="15" letter-spacing="4" fill="#1b365d" text-anchor="end">01 / 04</text><rect width="1200" height="900" filter="url(#grain)" opacity="0.05"/></svg>
